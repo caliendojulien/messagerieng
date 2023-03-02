@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template:
+    "titre      titre       titre"
+    "personnes  messages    messages"
+    "personnes  formulaire  formulaire";
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template:
+    "titre"
+    "messages"
+    "formulaire";
+  }
+  app-personnes-actives {
+    visibility: hidden;
+  }
+}
+
+app-titre {
+  grid-area: titre;
+  text-align: center;
+}
+
+app-messages {
+  grid-area: messages;
+}
+
+app-personnes-actives {
+  grid-area: personnes;
+}
+
+app-nouveau-message {
+  grid-area: formulaire;
+}
