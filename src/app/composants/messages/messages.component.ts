@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Message} from "../../modeles/Message";
+import {Personne} from "../../modeles/Personne";
 
 @Component({
   selector: 'app-messages',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
+  public messages: Message[];
 
+  constructor() {
+    this.messages = [];
+    let balzac = new Personne("De balzac", "Honoré");
+    let m = new Message(balzac, "Le père Goriot");
+    this.messages.push(m);
+  }
 }

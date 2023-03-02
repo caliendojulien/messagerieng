@@ -1,6 +1,8 @@
 <div id="divPersonnes">
   <h2>Personnes actives:</h2>
-  <div *ngFor="let personne of personnes">
-    <a href="#">{{ personne.nom }} - {{ personne.prenom }}</a>
+  <!-- Pour chaque personne du tableau -->
+  <div *ngFor="let p of personnes">
+    <!-- On affiche son nom et prénom -->
+    <a href="#">{{ p.nom }} - {{ p.prenom }}</a>
   </div>
 </div>
