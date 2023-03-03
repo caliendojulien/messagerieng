@@ -1,1 +1,4 @@
 <h1>{{ titre }}</h1>
+<div *ngIf="chuckNorris$ | async as chucknorris">
+  {{ chucknorris.value }}
+</div>

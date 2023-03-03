@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ApiService} from "../../services/api.service";
+import {Observable} from "rxjs";
+import {ChuckNorris} from "../../modeles/ChuckNorris";
 
 @Component({
   selector: 'app-titre',
@@ -6,10 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./titre.component.css']
 })
 export class TitreComponent {
-  public titre:string;
 
+  public titre: string;
+  public chuckNorris$: Observable<ChuckNorris>;
 
-  constructor() {
+  constructor(
+    private api: ApiService
+  ) {
     this.titre = "Messagerie";
+    this.chuckNorris$ = this.api.getChuckNorris();
   }
 }

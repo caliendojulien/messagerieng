@@ -13,10 +13,6 @@ export class MsgService {
   constructor() {
     this._messages = [];
     this._auteurs = [];
-    let balzac = new Personne("De balzac", "Honoré");
-    this._auteurs.push(balzac);
-    let m = new Message(balzac, "Salut");
-    this._messages.push(m);
   }
   // msg.service.ts
   public ajoutMessage(msg: Message) {

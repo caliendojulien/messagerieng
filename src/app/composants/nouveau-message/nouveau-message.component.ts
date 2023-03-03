@@ -10,7 +10,6 @@ import {MsgService} from "../../services/msg.service";
 })
 export class NouveauMessageComponent {
 
-
   constructor(
     private svc: MsgService
   ) {

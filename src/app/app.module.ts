@@ -8,6 +8,7 @@ import { NouveauMessageComponent } from './composants/nouveau-message/nouveau-me
 import { PersonnesActivesComponent } from './composants/personnes-actives/personnes-actives.component';
 import { MessageComponent } from './composants/message/message.component';
 import { FormsModule } from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from "@angular/forms";
   imports: [
     // app.module.ts
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
