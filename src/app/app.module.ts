@@ -7,6 +7,7 @@ import { TitreComponent } from './composants/titre/titre.component';
 import { NouveauMessageComponent } from './composants/nouveau-message/nouveau-message.component';
 import { PersonnesActivesComponent } from './composants/personnes-actives/personnes-actives.component';
 import { MessageComponent } from './composants/message/message.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { MessageComponent } from './composants/message/message.component';
     MessageComponent
   ],
   imports: [
-    BrowserModule
+    // app.module.ts
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

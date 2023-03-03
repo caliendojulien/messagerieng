@@ -14,6 +14,7 @@ export class MessagesComponent {
   public messages: Message[];
 
   constructor(
+    // Le service en injection de dépendances
     private svc: MsgService
   ) {
     // Il est une copie parfaite du tableau de messages du service

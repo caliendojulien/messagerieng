@@ -13,6 +13,7 @@ export class PersonnesActivesComponent {
   public personnes: Personne[];
 
   constructor(
+    // Le service en injection de dépendances
     private svc: MsgService
   ) {
     // il est une copie parfaite du tableau présent dans le service

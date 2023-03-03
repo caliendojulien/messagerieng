@@ -1,15 +1,17 @@
 <h2>Nouveau message:</h2>
-<form>
+<!-- nouveau-message.component.html -->
+<p>{{ form.value | json }}</p>
+<form #form="ngForm">
   <p>De:</p>
   <div>
-    <input type="text" name="pseudo">
+    <input type="text" name="pseudo" ngModel>
   </div>
   <p>Message:</p>
   <div>
-    <textarea name="message"></textarea>
+    <textarea name="message" ngModel></textarea>
   </div>
   <div id="boutons">
-    <button>Valider</button>
+    <button (click)="ajouterMsg(form.value)">Valider</button>
     <button>Annuler</button>
   </div>
 </form>

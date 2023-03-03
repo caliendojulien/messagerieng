@@ -18,6 +18,11 @@ export class MsgService {
     let m = new Message(balzac, "Salut");
     this._messages.push(m);
   }
+  // msg.service.ts
+  public ajoutMessage(msg: Message) {
+    this.messages.push(msg);
+    this.auteurs.push(msg.auteur);
+  }
 
   public get messages(): Message[] {
     return this._messages;

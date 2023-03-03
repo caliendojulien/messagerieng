@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Message} from "../../modeles/Message";
+import {Personne} from "../../modeles/Personne";
+import {MsgService} from "../../services/msg.service";
 
 @Component({
   selector: 'app-nouveau-message',
@@ -7,4 +10,18 @@ import { Component } from '@angular/core';
 })
 export class NouveauMessageComponent {
 
+
+  constructor(
+    private svc: MsgService
+  ) {
+  }
+  // nouveau-message.component.ts
+  public ajouterMsg(value: any) {
+    let auteur = new Personne(value.pseudo, "");
+    let nouveauMessage = new Message(
+      auteur,
+      value.message
+    );
+    this.svc.ajoutMessage(nouveauMessage);
+  }
 }
