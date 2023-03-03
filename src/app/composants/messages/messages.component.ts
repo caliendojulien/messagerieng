@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Message} from "../../modeles/Message";
 import {Personne} from "../../modeles/Personne";
+import {MsgService} from "../../services/msg.service";
 
 @Component({
   selector: 'app-messages',
@@ -8,12 +9,14 @@ import {Personne} from "../../modeles/Personne";
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
+
+  // On déclare un tableau de messages
   public messages: Message[];
 
-  constructor() {
-    this.messages = [];
-    let balzac = new Personne("De balzac", "Honoré");
-    let m = new Message(balzac, "Le père Goriot");
-    this.messages.push(m);
+  constructor(
+    private svc: MsgService
+  ) {
+    // Il est une copie parfaite du tableau de messages du service
+    this.messages = this.svc.messages;
   }
 }

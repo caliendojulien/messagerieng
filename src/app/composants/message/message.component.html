@@ -1,6 +1,8 @@
 <div>
   <fieldset>
-    <legend><a href="#"></a>{{ message.auteur.nom }} a écrit le {{ message.date }}</legend>
+    <legend><a href="#"></a>
+      {{ message.auteur.nom }}
+      a écrit le {{ message.date | date:'dd/MM/YYYY hh:mm' }}</legend>
     <p>{{ message.texte }}</p>
   </fieldset>
 </div>

@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./titre.component.css']
 })
 export class TitreComponent {
+  public titre:string;
+
+
+  constructor() {
+    this.titre = "Messagerie";
+  }
 }

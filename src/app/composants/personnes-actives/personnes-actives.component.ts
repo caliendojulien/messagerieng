@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {Personne} from "../../modeles/Personne";
+import {MsgService} from "../../services/msg.service";
 
 @Component({
   selector: 'app-personnes-actives',
@@ -11,14 +12,10 @@ export class PersonnesActivesComponent {
   // On déclare un tableau de personne
   public personnes: Personne[];
 
-  constructor() {
-    // On l'initialise a vide
-    this.personnes = [];
-    // On créé deux personnes
-    let bob = new Personne("Morane", "Bob");
-    let lucie = new Personne("Fer", "lucie");
-    // Qu'on insère dans le tableau
-    this.personnes.push(bob);
-    this.personnes.push(lucie);
+  constructor(
+    private svc: MsgService
+  ) {
+    // il est une copie parfaite du tableau présent dans le service
+    this.personnes = this.svc.auteurs;
   }
 }
